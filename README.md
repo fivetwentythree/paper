@@ -9,13 +9,6 @@ A command-line interface tool to retrieve archived versions of URLs from archive
 - Open archived pages directly in your default browser
 - Simple command-line interface
 
-## Installation
-
-### From PyPI
-```bash
-pip install archivecli
-```
-
 ### From Source
 ```bash
 git clone https://github.com/yourusername/archivecli.git
