@@ -1,4 +1,4 @@
-# archivecli
+# paper
 
 A command-line interface tool to retrieve archived versions of URLs from archive.is. This tool allows you to quickly access archived versions of web pages using the archive.is service.
 
