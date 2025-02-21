@@ -1,0 +1,31 @@
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+.venv
+ARC/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# System files
+.DS_Store
+Thumbs.db
