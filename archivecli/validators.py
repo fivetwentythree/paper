@@ -3,16 +3,7 @@ from typing import Optional, Tuple
 import requests
 from requests.exceptions import RequestException
 from .domain_blocker import DomainBlocker, DomainBlockerError
-
-
-class URLValidationError(Exception):
-    """Custom exception for URL validation errors."""
-    pass
-
-
-class URLReachabilityError(Exception):
-    """Custom exception for URL reachability errors."""
-    pass
+from .exceptions import URLValidationError, URLReachabilityError
 
 
 def is_valid_scheme(url: str) -> bool:
@@ -146,5 +137,4 @@ def validate_url(url: str) -> Optional[str]:
     
     if not is_well_formed_url(url):
         raise URLValidationError("URL is not well-formed")
-    
-    return url
+   

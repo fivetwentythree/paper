@@ -61,10 +61,16 @@ class DomainBlocker:
             bool: True if the domain is blocked, False otherwise.
         """
         try:
-            domain = urlparse(url).netloc.lower()
+            parsed = urlparse(url)
+            domain = parsed.netloc.lower()
+
+            if not domain:
+                raise ValueError("Invalid URL")
+
             # Remove 'www.' prefix if present
             if domain.startswith('www.'):
                 domain = domain[4:]
+
             return any(blocked in domain for blocked in self.blocked_domains)
         except Exception as e:
             raise DomainBlockerError(f"Failed to parse URL: {str(e)}")

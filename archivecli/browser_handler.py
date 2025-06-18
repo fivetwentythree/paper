@@ -8,11 +8,7 @@ import webbrowser
 from typing import Tuple
 import logging
 from urllib.parse import urlparse
-
-
-class BrowserError(Exception):
-    """Exception raised for browser-related errors."""
-    pass
+from .exceptions import BrowserError
 
 
 def validate_url(url: str) -> bool:

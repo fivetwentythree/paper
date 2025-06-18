@@ -68,7 +68,7 @@ def test_request_exceptions(exception, expected_error):
             check_url_reachability("https://example.com")
 
 
-def test_validate_url_with_reachability_success():
+def test_validate_url_with_reachability_success(mock_response):
     """Test successful complete URL validation with reachability."""
     with patch('requests.head') as mock_head:
         mock_head.return_value = mock_response()

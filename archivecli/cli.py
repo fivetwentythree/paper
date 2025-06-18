@@ -81,7 +81,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         int: Exit code (0 for success, non-zero for errors)
     """
     parser = create_parser()
-    args = parser.parse_args(argv)
+    try:
+        args = parser.parse_args(argv)
+    except SystemExit as exc:
+        # argparse throws SystemExit on parsing errors; return its code instead
+        return exc.code
     
     # Configure logging based on quiet flag
     configure_logging(quiet=args.quiet)
